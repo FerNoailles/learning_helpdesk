@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data noupdate="0">
+
+    <!--  -->
+    <record id="group_helpdesk_user_own" model="res.groups">
+        <field name="name">User: Personal tickets</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/> <!-- Usuario estandar -->
+    </record>
+
+    <record id="group_helpdesk_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="implied_ids" eval="[(4, ref('group_helpdesk_user_own'))]"/>
+    </record>
+
+    <record id="group_helpdesk_manager" model="res.groups">
+        <field name="name">Helpdesk Manager</field>
+        <field name="implied_ids" eval="[(4, ref('group_helpdesk_user'))]"/>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    </record>
+
+</data>
+</odoo>
+
+
+<!-- si hacemos el registro desde xml si o si tenemos que establecer el external id -->
