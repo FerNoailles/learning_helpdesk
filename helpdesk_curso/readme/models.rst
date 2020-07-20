@@ -1,0 +1,4 @@
+- helpdesk_ticket
+- helpdesk_ticket_stage
+- helpdesk_ticket_tag
+- inherit_res_partner
